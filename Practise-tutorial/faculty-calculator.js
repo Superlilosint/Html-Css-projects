@@ -15,22 +15,26 @@ It performs wrong operation 10% of the times
 */
 
 
-let a = 3;
-let b = 2;
+let random = Math.random()
+console.log(random)
 
-let prob = Math.random() < 0.1;
-if (a + b) {
-    console.log(a-b);
+let a = prompt("Enter the first number: ");
+let c = prompt("Enter the Operation");
+let b = prompt("Enter the Second Number: ")
+
+let obj = {
+    "+": "-",
+    "*": "+",
+    "-": "/",
+    "/": "**",
 }
-else if (a * b) {
-    console.log(a+b);
-}
-else if (a - b) {
-    console.log(a/b);
-}
-else if (a / b) {
-    console.log(a**b);
+
+if(random>0.1){
+    //correct calculation
+    alert(`The result is: ${eval(`${a} ${c} ${b}`)}`);
 }
 else{
-    console.log("Try again");
+    //incorrect calculation
+    c = obj[c]; //operation is  changed 
+    alert(`The result is: ${eval(`${a} ${c} ${b}`)}`);
 }
